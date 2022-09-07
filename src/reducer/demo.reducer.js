@@ -40,6 +40,7 @@ const demo = (
           demoType: getAllPostAction.GET_ALL_POST_REQUEST,
         });
       case getAllPostAction.DELETE_POST_SUCCESS: {
+        state.demoData.splice(state.demoData.findIndex(e => e.id === action.data.id),1);
         return Object.assign({}, state, {
           demoLoading: false,
           demoStatus: action.status,

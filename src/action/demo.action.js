@@ -38,7 +38,7 @@ function deleteData(id) {
     dispatch(request());
     let url = 'posts';
     demoApiRequest.deleteData(url,id).then(
-      data => dispatch(success(data)),
+      data => dispatch(success({...data,'id': id})),
       error => dispatch(failure(error.toString())),
     );
   };
