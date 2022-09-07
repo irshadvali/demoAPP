@@ -38,7 +38,7 @@ function Dashboard() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(demoActions.getAllPost());
-  }, []);
+  }, [dispatch]);
 
   const deleteData =(id)=>{
     dispatch(demoActions.deleteData(id));
